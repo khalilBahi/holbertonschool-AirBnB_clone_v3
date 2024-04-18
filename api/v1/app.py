@@ -2,7 +2,7 @@
 """
 API
 """
-from flask import Flask
+from flask import Flask, jsonify
 from models import storage
 from api.v1.views import app_views
 import os
@@ -17,6 +17,14 @@ def close_storage(exception=None):
     Closes the storage on teardown
     """
     storage.close()
+
+
+@app.errorhandler(404)
+def error_not_found(error):
+    """
+    error not found 404
+    """
+    return jsonify({"error": "Not found"}), 404
 
 
 if __name__ == "__main__":
