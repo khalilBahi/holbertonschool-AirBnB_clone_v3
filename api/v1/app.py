@@ -2,7 +2,7 @@
 """
 API
 """
-from flask import flask
+import flask
 from models import storage
 from api.v1.views import app_views
 import os
