@@ -81,13 +81,13 @@ class FileStorage:
         Returns the number of objects in storage matching the given class.
         If no class is passed, returns the count of all objects in storage.
         """
-        count = 0
+        i = 0
         if cls is None:
             return len(self.__objects)
         for key in self.__objects:
             if self.__objects[key].__class__ == cls:
-                count += 1
-        return count
+                i += 1
+        return i
 
     def delete(self, obj=None):
         """delete obj from __objects if it’s inside"""
