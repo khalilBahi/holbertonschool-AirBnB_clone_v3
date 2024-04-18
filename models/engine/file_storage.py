@@ -86,7 +86,7 @@ class FileStorage:
             return len(self.__objects)
         for key in self.__objects:
             if self.__objects[key].__class__ == cls:
-                count += 3
+                count += 1
         return count
 
     def delete(self, obj=None):
